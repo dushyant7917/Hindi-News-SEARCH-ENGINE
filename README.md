@@ -18,10 +18,10 @@ The results for the query searched by the user are shown only from hindi news do
 
 ##HOW TO USE IT?
 **NOTE : Google the steps to install and run the softwares/frameworks mentioned in this documentation.** 
-1. Install the above softwares, frameworks in you PC(any directory). 
-2. Run the web crawling spider(*HNC_crawler.py*) to collect the data and store it in mongodb.
-3. Index the data of mongodb using elastic search(run *index.py*).
-4. Execute the *query.py* file to use the search engine and view the results.
+* Install the above softwares, frameworks in you PC(any directory). 
+* Run the web crawling spider(*HNC_crawler.py*) to collect the data and store it in mongodb.
+* Index the data of mongodb using elastic search(run *index.py*).
+* Execute the *query.py* file to use the search engine and view the results.
 
 ##COPYRIGHT AND LICENSING INFORMATION
 This project is an open source project. Its code can be used, distributed and modified in any form without issue of any legal license from the author.
