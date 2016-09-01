@@ -11,12 +11,12 @@ def show_results(qrry):
     for doc in res['hits']['hits']:
         if doc['_source']['url'] not in ll:
             ll.append(doc['_source']['url'])
+            pprint.pprint(doc['_source']['data']['title'])
+            pprint.pprint(doc['_source']['url'])
+            print("\n")
         else:
             continue
 
 
 query = str(raw_input("Enter your query:"))
 show_results(query)
-
-for item in ll:
-    pprint.pprint(item)
