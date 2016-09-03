@@ -15,14 +15,14 @@ The results for the query searched by the user are shown only from hindi news do
 * Mongodb3.2 : Database Management
 * Robomongo0.9 : Interface Application to view mongodb data
 * Elasticsearch2.3 : Indexing and Ranking
-* Flask : Inteface between elastic search and website(http://localhost:5000)
+* Flask0.11.1 : Inteface between elastic search and website(http://localhost:5000)
 
 ##HOW TO USE IT?
 **NOTE : Google the steps to install and run the softwares/frameworks mentioned in this documentation.** 
 * Install the above softwares, frameworks in you PC(any directory). 
 * Run the web crawling spider(*HNC_crawler.py*) to collect the data and store it in mongodb.
 * Index the data of mongodb using elastic search(run *index.py*).
-* Run the *app.py* file from *Query directory* to use your PC as the server and use the search engine on **http://localhost:5000** on your web browser.
+* Run the *app.py* file from **Query directory** to use your PC as the server and use the search engine on *http://localhost:5000* on your web browser.
 
 ##COPYRIGHT AND LICENSING INFORMATION
 This project is an open source project. Its code can be used, distributed and modified in any form without issue of any legal license from the author.
