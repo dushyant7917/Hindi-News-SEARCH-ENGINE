@@ -16,6 +16,7 @@ The results for the query searched by the user are shown only from hindi news do
 * Robomongo0.9 : Interface Application to view mongodb data
 * Elasticsearch2.3 : Indexing and Ranking
 * Flask0.11.1 : Inteface between elastic search and website(http://localhost:5000)
+* Google Transliterate API : Real time conversion of english text(query entered by user) into hindi query
 
 ##HOW TO USE IT?
 **NOTE : Google the steps to install and run the softwares/frameworks mentioned in this documentation.** 
