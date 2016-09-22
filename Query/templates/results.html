@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>एसआरएम हिंदी शब्दार्थ विज्ञानं खोज यंत्र</title>
+<title>SRM HINDI SEMANTICS SEARCH ENGINE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -18,8 +18,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="static/sf_semintro.jpg" style="width:45%;" class="w3-round"><br><br>
-    <h4 class="w3-padding-0"><b>एसआरएम हिंदी शब्दार्थ विज्ञानं खोज यंत्र</b></h4>
+    <img src="https://goo.gl/w0mjwY" style="width:45%;" class="w3-round"><br><br>
+    <h4 class="w3-padding-0"><b>एसआरएम शब्दार्थ विज्ञानं खोज यंत्र</b></h4>
     <p class="w3-text-grey">@एसआरएम</p>
   </div>
 
@@ -33,7 +33,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container">
-    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="https://goo.gl/w0mjwY" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey"><i class="fa fa-bars"></i></span>
     <h1><b>हिंदी समाचार</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
@@ -43,13 +43,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <div class="w3-row-padding">
     {% for item in res['hits']['hits'] %}
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src={{ item['_source']['data']['image_url'][0] }} alt="News" style="width:100%" class="w3-hover-opacity">
+
+    <div class="w3-third w3-container w3-margin-bottom" style="height:500px;">
+     <div style="height:230px;">
+       <a href="{{ item['_source']['url'][0] }}">
+        <img src={{ item['_source']['data']['image_url'][0] }} alt="News" style="width:100%" class="w3-hover-opacity">
+      </a>
+    </div>
       <div class="w3-container w3-white">
-        <p><b><a href="{{ item['_source']['url'][0] }}">{{ item['_source']['data']['title'][0] }}</a></b></p>
+       <a href="{{ item['_source']['url'][0] }}">
+        <p><b>{{ item['_source']['data']['title'][0] }}</b></p>
+      </a>
         <p>{{ item['_source']['data']['summary'][0] }}</p>
       </div>
-    </div>
+  </div>
     {% endfor %}
   </div>
 
@@ -61,8 +68,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-row-padding">
     <div class="w3-third">
       <h3>विकासक सूचना</h3>
-      <p></p>
-      <p></p>
+      <p>सम्पर्क : dushyant7917@gmail.com</p>
+      <p>GitHub प्रोफ़ाइल : dushyant7917</p>
     </div>
   </div>
 </footer>
