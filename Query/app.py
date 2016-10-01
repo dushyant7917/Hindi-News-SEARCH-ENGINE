@@ -15,7 +15,15 @@ def my_form_post():
     text = request.form['text']
     print text
     es = Elasticsearch()
-    results = es.search(index="test-index3", doc_type="doc", body={"query":{"query_string":{"query":text}}})
+    results = es.search(index="test-index3", doc_type="doc", body={"size":15,"query":{"query_string":{"query":text}}})
+    return render_template("results.html", res=results)
+
+@app.route('/api/v1.0/<text>', methods=['GET'])
+def api_call(text):
+
+    print text
+    es = Elasticsearch()
+    results = es.search(index="test-index3", doc_type="doc", body={"size":15,"query":{"query_string":{"query":text}}})
     return render_template("results.html", res=results)
 
 
