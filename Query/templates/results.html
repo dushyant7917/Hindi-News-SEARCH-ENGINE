@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <title>SRM HINDI SEMANTICS SEARCH ENGINE</title>
@@ -47,7 +46,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-third w3-container w3-margin-bottom" style="height:500px;">
      <div style="height:230px;">
        <a href="{{ item['_source']['url'][0] }}">
-        <img src={{ item['_source']['data']['image_url'][0] }} alt="News" style="width:100%" class="w3-hover-opacity">
+        <img class="img_item" src={{ item['_source']['data']['image_url'][0] }} alt="News" style="width:100%" class="w3-hover-opacity">
       </a>
     </div>
       <div class="w3-container w3-white">
@@ -68,8 +67,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-row-padding">
     <div class="w3-third">
       <h3>विकासक सूचना</h3>
-      <p>सम्पर्क : dushyant7917@gmail.com</p>
-      <p>GitHub प्रोफ़ाइल : dushyant7917</p>
+      <p>एसआरएम</p>
     </div>
   </div>
 </footer>
@@ -77,5 +75,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- End page content -->
 </div>
 
+<script src = "/static/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("img").on("error", function(){
+    var img = $(this);
+    img.attr('src', '/static/no_image.png');
+  });
+
+});
+
+</script>
+
+<style>
+
+.img_item{
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: 100%;
+
+}
+
+</style>
 </body>
+
 </html>
