@@ -33,6 +33,6 @@ This project is an open source project. Its code can be used, distributed and mo
 * Contact : **dushyant7917@gmail.com**
 
 ##CONTRIBUTORS
-* Rudrangshu Nandi
-* Tilak Patidar
-* Aditya Sharma
+* Rudrangshu Nandi : **github.com/Rud156**
+* Tilak Patidar : **github.com/tilakpatidar**
+* Aditya Sharma : **github.com/aadii104**
