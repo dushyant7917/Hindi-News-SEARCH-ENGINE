@@ -1,31 +1,28 @@
 from flask import Flask
 from flask import request
-from flask import render_template
+from flask import render_template, redirect, url_for
 from elasticsearch import Elasticsearch
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route('/',methods=['GET'])
 def my_form():
     return render_template("search.html")
 
+
 @app.route('/', methods=['POST'])
 def my_form_post():
+    query = request.form['text']
+    return redirect(url_for("api_call", text=query))
 
-    text = request.form['text']
-    print text
-    es = Elasticsearch()
-    results = es.search(index="test-index3", doc_type="doc", body={"size":15,"query":{"query_string":{"query":text}}})
-    return render_template("results.html", res=results)
 
-@app.route('/api/v1.0/<text>', methods=['GET'])
+@app.route('/api/v1.0/search/<string:text>',methods=['GET'])
 def api_call(text):
-
-    print text
     es = Elasticsearch()
-    results = es.search(index="test-index3", doc_type="doc", body={"size":15,"query":{"query_string":{"query":text}}})
+    results = es.search(index="test-index3", doc_type="doc", body={"size":18,"query":{"query_string":{"query":text}}})
     return render_template("results.html", res=results)
 
 
 if __name__ == '__main__':
-    app.run(debug='True')
+    app.run(host='0.0.0.0', port=int('5000'), debug='True')
