@@ -31,3 +31,8 @@ This project is an open source project. Its code can be used, distributed and mo
 ##AUTHOR INFORMATION
 * Developer : **DUSHYANT SINGH**
 * Contact : **dushyant7917@gmail.com**
+
+##CONTRIBUTORS
+* Rudrangshu Nandi
+* Tilak Patidar
+* Aditya Sharma
