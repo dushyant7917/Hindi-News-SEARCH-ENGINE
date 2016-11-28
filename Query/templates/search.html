@@ -16,8 +16,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <script type="text/javascript" src="https://www.google.com/jsapi">
 </script>
-<script type="text/javascript">
 
+<script type="text/javascript">
   // Load the Google Transliterate API
   google.load("elements", "1", {
         packages: "transliteration"
@@ -48,7 +48,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Sidenav/menu -->
-<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
+<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" ><br>
   <div class="w3-container">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
       <i class="fa fa-remove"></i>
@@ -57,7 +57,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h4 class="w3-padding-0"><b>एसआरएम हिंदी शब्दार्थ विज्ञानं खोज यंत्र</b></h4>
     <p class="w3-text-grey">@एसआरएम</p>
   </div>
-
 </nav>
 
 <!-- Overlay effect when opening sidenav on small screens -->
@@ -68,10 +67,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container">
-    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large></a>
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <h1><b>हिंदी समाचार</b>
-      <form action="." method="POST" >
+      <form action="{{url_for('index')}}" method="POST" >
           <input type="text" name="text" id="transliterateTextarea" class="keyboardInput">
           <input type="submit" name="my-form" value="खोजें">
       </form>
