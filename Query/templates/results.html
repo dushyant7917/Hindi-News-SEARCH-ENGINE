@@ -2,13 +2,48 @@
 <html>
 <title>SRM HINDI SEMANTICS SEARCH ENGINE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="static/keyboard.js" charset="UTF-8"></script>
+<link rel="stylesheet" type="text/css" href="static/keyboard.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
 </style>
+
+<script type="text/javascript" src="https://www.google.com/jsapi">
+</script>
+<script type="text/javascript">
+
+  // Load the Google Transliterate API
+  google.load("elements", "1", {
+        packages: "transliteration"
+      });
+
+  function onLoad() {
+    var options = {
+        sourceLanguage:
+            google.elements.transliteration.LanguageCode.ENGLISH,
+        destinationLanguage:
+            [google.elements.transliteration.LanguageCode.HINDI],
+        shortcutKey: 'ctrl+g',
+        transliterationEnabled: true
+    };
+
+    // Create an instance on TransliterationControl with the required
+    // options.
+    var control =
+        new google.elements.transliteration.TransliterationControl(options);
+
+    // Enable transliteration in the textbox with id
+    // 'transliterateTextarea'.
+    control.makeTransliteratable(['transliterateTextarea']);
+  }
+  google.setOnLoadCallback(onLoad);
+</script>
+
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Sidenav/menu -->
@@ -36,12 +71,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey"><i class="fa fa-bars"></i></span>
     <h1><b>हिंदी समाचार</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
+      <form action="{{url_for('index')}}" method="POST" >
+          <input type="text" name="text" id="transliterateTextarea" class="keyboardInput" value="{{search_text}}">
+          <input type="submit" name="my-form" value="खोजें">
+      </form>
     </div>
   </header>
 
 
   <div class="w3-row-padding">
-    {% for item in res['hits']['hits'] %}
+    {% for item in results['hits']['hits'] %}
 
     <div class="w3-third w3-container w3-margin-bottom" style="height:500px;">
      <div style="height:230px;">
