@@ -32,7 +32,7 @@ This project is an open source project. Its code can be used, distributed and mo
 * Developer : **DUSHYANT SINGH**
 * Contact : **dushyant7917@gmail.com**
 
-##CONTRIBUTORS
+##OTHER CONTRIBUTORS
 * Rudrangshu Nandi : **github.com/Rud156**
 * Tilak Patidar : **github.com/tilakpatidar**
 * Aditya Sharma : **github.com/aadii104**
