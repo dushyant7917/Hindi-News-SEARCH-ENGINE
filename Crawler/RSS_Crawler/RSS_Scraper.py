@@ -2,9 +2,9 @@
 
 import requests
 from bs4 import BeautifulSoup
-import RSS_Links
 
 import time
+from time import gmtime, strftime
 
 def RSSlinks():
     agent = {'User-Agent': 'Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405'}
@@ -80,4 +80,5 @@ for link in NEWS_URLS:
 
     except:
         with open('Error_Log.txt', 'a') as the_file:
-            the_file.write('Some Error Occured\n')
+            showtime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            the_file.write('Some Error Occured '+ showtime + '\n')
