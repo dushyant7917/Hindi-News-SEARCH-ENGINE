@@ -11,7 +11,7 @@
 
     <nav class="nav-extended">
     <div class="nav-wrapper orange darken-3">
-      <a href="#" class="brand-logo">LOGO</a>
+      <a href="/" class="brand-logo">LOGO</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">विशेषताएं</a></li>
@@ -79,16 +79,16 @@
         </div>
 
         <!-- Results Content -->
-        {% for index, item in enumerate(results['hits']['hits']) %}
+        {% for index in range(0, 18, 3) %}
         <div class="row">
-          <div class="col s12 m6 l4">
+          <div class="col s4 m4 l4">
             <div class="card medium z-depth-2">
               <div class="card-image waves-effect waves-block waves-light">
                   <img src="{{ results['hits']['hits'][index]['_source']['data']['image_url'][0] }}">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">more_vert</i></span>
-                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">Read More</a></p>
+                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">अधिक पढ़ें</a></p>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">close</i></span>
@@ -96,14 +96,15 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
+          {% set index = index + 1 %}
+          <div class="col s4 m4 l4">
             <div class="card medium z-depth-2">
               <div class="card-image waves-effect waves-block waves-light">
                   <img src="{{ results['hits']['hits'][index]['_source']['data']['image_url'][0] }}">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">more_vert</i></span>
-                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">Read More</a></p>
+                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">अधिक पढ़ें</a></p>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">close</i></span>
@@ -111,14 +112,15 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
+          {% set index = index + 1 %}
+          <div class="col s4 m4 l4">
             <div class="card medium z-depth-2">
               <div class="card-image waves-effect waves-block waves-light">
                   <img src="{{ results['hits']['hits'][index]['_source']['data']['image_url'][0] }}">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">more_vert</i></span>
-                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">Read More</a></p>
+                <p><a href="{{ results['hits']['hits'][index]['_source']['url'][0] }}">अधिक पढ़ें</a></p>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{ results['hits']['hits'][index]['_source']['data']['title'][0] }}<i class="material-icons right">close</i></span>
