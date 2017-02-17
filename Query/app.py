@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/',methods = ['GET','POST'])
 def index():
     if request.method == 'GET':
-        return render_template("search.html")
+        return render_template("home.html")
     else:
         query = request.form['text']
         return redirect(url_for('search', query = query))
@@ -21,7 +21,7 @@ def search(query):
     if request.method == 'GET':
         es = Elasticsearch()
         results = es.search(index="test-index3", doc_type="doc", body={"size":18,"query":{"query_string":{"query":query}}})
-        return render_template('results.html', results = results, search_text = query)
+        return render_template('search_results.html', results = results, search_text = query, enumerate = enumerate)
     else:
         return "Some Error Occured!"
 

@@ -1,0 +1,6 @@
+*******************Index Format***************************
+
+index = [ [keyword_1[url_1[title,summary,date], url_2[title,summary,date]...]], 
+          [keyword_2[url_1[title,summary,date], url_2[title,summary,date]...]],
+          [keyword_3[url_1[title,summary,date], url_2[title,summary,date], url_3[title,summary,date]...]] 
+        ]

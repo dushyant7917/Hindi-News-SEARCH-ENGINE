@@ -16,12 +16,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <script type="text/javascript" src="https://www.google.com/jsapi">
 </script>
 <script type="text/javascript">
-
   // Load the Google Transliterate API
   google.load("elements", "1", {
         packages: "transliteration"
       });
-
   function onLoad() {
     var options = {
         sourceLanguage:
@@ -31,12 +29,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         shortcutKey: 'ctrl+g',
         transliterationEnabled: true
     };
-
     // Create an instance on TransliterationControl with the required
     // options.
     var control =
         new google.elements.transliteration.TransliterationControl(options);
-
     // Enable transliteration in the textbox with id
     // 'transliterateTextarea'.
     control.makeTransliteratable(['transliterateTextarea']);
@@ -119,27 +115,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <script src = "/static/jquery-3.1.1.min.js"></script>
 <script>
 $(document).ready(function(){
-
   $("img").on("error", function(){
     var img = $(this);
     img.attr('src', '/static/no_image.png');
   });
-
 });
-
 </script>
 
 <style>
-
 .img_item{
   width: 100%;
   height: 100%;
   display: block;
   margin-left: auto;
   margin-right: 100%;
-
 }
-
 </style>
 </body>
 

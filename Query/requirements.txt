@@ -1,0 +1,9 @@
+click==6.6
+elasticsearch==5.0.1
+Flask==0.11.1
+Flask-Elasticsearch==0.2.5
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
+urllib3==1.19.1
+Werkzeug==0.11.11
