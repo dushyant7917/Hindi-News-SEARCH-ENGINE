@@ -81,7 +81,10 @@
         <!-- Results Content -->
 
         <div class="row">
+<<<<<<< HEAD
           {% if results['hits']['hits'] | length > 0 %}
+=======
+>>>>>>> 15e19a1298c32e678c729d3a83ebd686578353b4
           {% for item in results['hits']['hits'] %}
           <div class="col s12 m6 l4">
             <div class="card medium z-depth-2">
@@ -97,6 +100,7 @@
                 <p>{{ item['_source']['data']['summary'][0] }}</p>
               </div>
             </div>
+<<<<<<< HEAD
           </div>
           {% endfor %}
           {% else %}
@@ -106,6 +110,10 @@
             <h4>आप किसी और कीवर्ड के साथ फिर सर्च करें।</h4>
           </div>
           {% endif %}
+=======
+          </div>
+          {% endfor %}
+>>>>>>> 15e19a1298c32e678c729d3a83ebd686578353b4
         </div>
 
 
