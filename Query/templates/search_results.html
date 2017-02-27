@@ -81,40 +81,33 @@
         <!-- Results Content -->
 
         <div class="row">
-<<<<<<< HEAD
           {% if results['hits']['hits'] | length > 0 %}
-=======
->>>>>>> 15e19a1298c32e678c729d3a83ebd686578353b4
           {% for item in results['hits']['hits'] %}
           <div class="col s12 m6 l4">
             <div class="card medium z-depth-2">
               <div class="card-image waves-effect waves-block waves-light">
-                  <img src="{{ item['_source']['data']['image_url'][0] }}">
+                  <img src="{{ item['_source']['image_url'][0] }}">
               </div>
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{ item['_source']['data']['title'][0] }}<i class="material-icons right">more_vert</i></span>
+                <span class="card-title activator grey-text text-darken-4">{{ item['_source']['title'][0] }}<i class="material-icons right">more_vert</i></span>
                 <p><a href="{{ item['_source']['url'][0] }}">अधिक पढ़ें</a></p>
               </div>
               <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">{{ item['_source']['data']['title'][0] }}<i class="material-icons right">close</i></span>
-                <p>{{ item['_source']['data']['summary'][0] }}</p>
+                <span class="card-title grey-text text-darken-4">{{ item['_source']['title'][0] }}<i class="material-icons right">close</i></span>
+                <p>{{ item['_source']['summary'][0] }}</p>
               </div>
             </div>
-<<<<<<< HEAD
           </div>
           {% endfor %}
           {% else %}
           <div class="col s12 m12 l12 center">
             <h2>ओए होए !!</h2>
             <h4>लगता है आपकी खोज में कुछ मिला नहीं है।</h4>
-            <h4>आप किसी और कीवर्ड के साथ फिर सर्च करें।</h4>
+            <h4>आप किसी और खोजशब्द के साथ फिर खोज करें।</h4>
           </div>
-          {% endif %}
-=======
-          </div>
-          {% endfor %}
->>>>>>> 15e19a1298c32e678c729d3a83ebd686578353b4
+        {% endif %}
         </div>
+      </div>
 
 
         <script src = "/static/jquery-3.1.1.min.js"></script>
