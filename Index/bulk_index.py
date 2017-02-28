@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 from pyelasticsearch import ElasticSearch
 #es = ElasticSearch('http://localhost:9200/')
-es = ElasticSearch('https://site:2e78836eebab9b7ab8fbfc681f50107a@bifur-eu-west-1.searchly.com')
+es = ElasticSearch("Elasticsearch URI")
 
 
 client = MongoClient('localhost:27017')
