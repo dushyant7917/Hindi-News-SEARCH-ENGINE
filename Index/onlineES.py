@@ -5,7 +5,7 @@ from elasticsearch import Elasticsearch
 logging.basicConfig(level=logging.INFO)
 
 # Parse the auth and host from env:
-bonsai = "https://t9hmi71e5i:knf4qmzmyx@hsse-458039054.ap-southeast-2.bonsaisearch.net"
+bonsai = "Bonsai Elasticsearch Endpoint"
 auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
 host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
 
@@ -36,8 +36,7 @@ l = db.News.find()
 
 count = 0
 for item in l:
-    if count > 2942:
-        es.index('hsse', 'doc', {'url': item['url'],
+    es.index('hsse', 'doc', {'url': item['url'],
                                       'title': item['title'],
                                       'summary': item['summary'],
                                       'description': item['description'],
@@ -45,5 +44,6 @@ for item in l:
                                       'date_time': item['date_time'],
                                       'image_url': item['image_url']
                                      })
+        
     count = count + 1
     print count
