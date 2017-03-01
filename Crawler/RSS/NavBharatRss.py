@@ -6,8 +6,8 @@ try:
 
     from pymongo import MongoClient
     client = MongoClient('mongodb://localhost:27017/')
-    db = client['Navbharat-Times']
-    collection = db['NB-RSS']
+    db = client['Navbharat_Times']
+    collection = db['NT_RSS']
 
     # Getting RSS links
     page  = requests.get('http://navbharattimes.indiatimes.com/rss.cms')
@@ -30,6 +30,7 @@ try:
 
         for value in entries:
             news_links.append(value.link)
+            print "Link added for scanning: " + value.link
 
         time.sleep(5)
 
@@ -54,7 +55,50 @@ try:
 
         time.sleep(5)
 
+    ############################################################################
+    # Scraping Completed... Now data will be indexed in ES
+    from elasticsearch import Elasticsearch
+    l = db.News.find()
+
+    total = db.News.count()
+    count = 0
+    prv = -1
+
+    while count<total:
+        try:
+            # Instantiate the new Elasticsearch connection
+            es = Elasticsearch("Elastic search URI")
+            #es = Elasticsearch()
+            count = 0
+            for item in xrange(0,total):
+                if count > prv:
+                    prv = count
+                    dt = l[item]['date_time'][0].split(",")[1]
+                    dt = dt.split("+")[0]
+                    es.index('hn', 'doc', {'url': [l[item]['url']],
+                                                  'title': l[item]['title'],
+                                                  'summary': l[item]['summary'],
+                                                  'description': l[item]['summary'],
+                                                  'keywords': l[item]['keywords'],
+                                                  'date': dt,
+                                                  'image_url': l[item]['image']
+                                                 })
+                    count = count + 1
+                    print count, item+1
+                else:
+                    count = count + 1
+
+
+        except Exception as e:
+            print(str(e))
+
+    print "RSS indexing completed"
+    # Indexing also completed..
+    ######################################################################################################
+
+
 except Exception as e:
+    from time import strftime,gmtime
     with open('Error_Log.txt', 'a') as the_file:
         showtime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
         the_file.write(showtime + " | " + str(e) +'\n')
