@@ -21,7 +21,7 @@ prv = -1
 while count<total:
     try:
         # Instantiate the new Elasticsearch connection
-        es = Elasticsearch("https://search-hsse-lw7qjjebuhv3pspk2v5jbtsfbq.us-west-2.es.amazonaws.com/")
+        es = Elasticsearch("AWS Elasticsearch cluster API Endpoint")
         count = 0
         for item in xrange(0,total):
             if count > prv:
