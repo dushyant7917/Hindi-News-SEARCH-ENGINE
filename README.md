@@ -34,4 +34,3 @@ This project is an open source project. Its code can be used, distributed and mo
 
 ## OTHER CONTRIBUTORS
 * Rudrangshu Nandi : **github.com/Rud156**
-* Tilak Patidar : **github.com/tilakpatidar**
